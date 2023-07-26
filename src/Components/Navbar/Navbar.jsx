@@ -11,7 +11,7 @@ const Navbar = () => {
  
   return (
     <div className={state === false ? "navbar" : "navbar1"}>
-      <h1>
+      <h1 className="logo">
         <span className="s">S</span>tyle <span className="s">S</span>phere
       </h1>
       <span>

@@ -1,0 +1,26 @@
+.carousel-item img {
+  aspect-ratio: 16/6;
+}
+.watch-title {
+  color: #c5c6d0;
+  font-size: 5vw;
+  font-weight: 700;
+  font-family: "Merriweather", serif;
+}
+.watch-caption {
+  color: #b6b6b4;
+}
+.headphone-title,
+.jewellery-title{
+   font-weight: 700;
+   font-size: 5vw;
+   font-family: "Merriweather", serif;
+}
+
+.watch-caption,
+.headphone-caption,
+.jewellery-caption{
+  font-size: 2vw;
+}
+
+
