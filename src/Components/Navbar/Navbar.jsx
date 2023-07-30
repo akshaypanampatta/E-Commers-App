@@ -5,6 +5,8 @@ import { BsPersonFillAdd } from "react-icons/bs";
 import {HiShoppingCart} from "react-icons/hi"
 import {GiHamburgerMenu} from "react-icons/gi"
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   const [state,setState]=useState(false);
   
@@ -16,22 +18,26 @@ const Navbar = () => {
       </h1>
       <span>
         <ul className={state === false ? "totallist" : "totallist1"}>
-          <li className={state === false ? "list" : "list1"}>Home</li>
-          <li className={state === false ? "list" : "list1"}>Products</li>
+          <Link style={{ textDecoration: "none" }} to={"/"}>
+            <li className={state === false ? "list" : "list1"}>Home</li>
+          </Link>
+          <Link style={{ textDecoration: "none" }} to={"./products"}>
+            <li className={state === false ? "list" : "list1"}>Products</li>
+          </Link>
           <li className={state === false ? "list" : "list1"}>About</li>
           <li className={state === false ? "list" : "list1"}>Contact</li>
         </ul>
       </span>
       <span className={state === false ? "buttons" : "buttons1"}>
-        <button className={state === false ? "button" : "button1"}>
+        <button className={state === false ? "button1" : "button2"}>
           <BiLogIn />
           Login
         </button>
-        <button className={state === false ? "button" : "button1"}>
+        <button className={state === false ? "button1" : "button2"}>
           <BsPersonFillAdd />
           Register
         </button>
-        <button className={state === false ? "button" : "button1"}>
+        <button className={state === false ? "button1" : "button2"}>
           <HiShoppingCart />
           Cart(0)
         </button>

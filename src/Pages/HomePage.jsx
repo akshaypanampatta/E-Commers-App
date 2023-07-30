@@ -1,17 +1,19 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
 import Slider from '../Components/Slider/Slider'
 import Products from '../Components/Products/Products'
+import Catagories from '../Components/Catagories/Catagories'
+import Cart from '../Components/Cart/Cart'
+
 
 const HomePage = () => {
   return (
     <div>
-        <Navbar/>
-        <Slider/>
-        <Products/>
-       
+      <Slider />
+      <Catagories />
+      <Products />
+      <Cart/>
     </div>
-  )
+  );
 }
 
 export default HomePage
