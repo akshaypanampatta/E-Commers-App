@@ -24,7 +24,6 @@ const Products = () => {
             <h1 className="h1 text-center fw-bold mt-3">Latest Products</h1>
           </div>
         </div>
-
         <div className="row ">
           {products.map((product) => (
             <div className="col-lg-3 col-md-4 col-sm-6  mb-4 d-flex justify-content-center ">
@@ -37,6 +36,7 @@ const Products = () => {
                     width: "15rem",
                     cursor: "pointer",
                     textDecoration: "none",
+                    boxShadow: "0 5px 10px rgba(0, 0, 0, 0.2)",
                   }}
                 >
                   <Card.Img
@@ -52,7 +52,7 @@ const Products = () => {
                       ${product.price}
                     </Card.Text>
                     <div className="d-flex justify-content-center">
-                      <Button variant="dark">Buy Now</Button>
+                      <Button variant="dark">Detailed View</Button>
                     </div>
                   </Card.Body>
                 </Card>

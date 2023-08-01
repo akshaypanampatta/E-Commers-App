@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useParams} from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-const SingleProduct = () => {
+const SingleProduct = ({ addToCart }) => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
 
@@ -10,10 +10,10 @@ const SingleProduct = () => {
       const response = await fetch(`https://fakestoreapi.com/products/${id}`);
       const data = await response.json();
       setProduct(data);
-      
     };
     fetchProduct();
   }, [id]);
+
   if (!product) {
     return <div>Loading........</div>;
   }
@@ -21,7 +21,8 @@ const SingleProduct = () => {
     <section className="text-gray-600 body-font overflow-hidden">
       <div className="container px-5 py-24 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
-          <img style={{height:"400px"}}
+          <img
+            style={{ height: "400px" }}
             alt="ecommerce"
             className="lg:w-1/2 w-full lg:h-50 object-contain object-center rounded"
             src={product.image}
@@ -168,12 +169,17 @@ const SingleProduct = () => {
               <span className="title-font font-medium text-2xl text-gray-900">
                 ${product.price}
               </span>
-              <button className="flex ml-auto text-black bg-white-500 border-2 py-2 px-6 focus:outline-none hover:bg-black-600 rounded">
+              <button
+                onClick={() => addToCart(product)}
+                className="flex ml-auto text-black bg-white-500 border-2 py-2 px-6 focus:outline-none hover:bg-black-600 rounded"
+              >
                 Add to Cart
               </button>
-              <button className="flex ml-auto text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-black-600 rounded">
-                Buy Now
-              </button>
+              <Link className="text-decoration-none" to={"/cart"}>
+                <button className="  flex ml-auto text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-black-600 rounded">
+                  Go to Cart
+                </button>
+              </Link>
               <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                 <svg
                   fill="currentColor"

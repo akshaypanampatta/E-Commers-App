@@ -14,7 +14,6 @@ function Slider() {
             src="https://www.orientalwatch.com/image.aspx?f=companyactivity/320/edmbanner.jpg&h=624&w=1722 "
             alt="First slide"
           />
-
           <Carousel.Caption>
             <div className="container-md">
               <h2 className="watch-title">On The Trail Of The Original</h2>

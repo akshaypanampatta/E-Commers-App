@@ -9,8 +9,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [state,setState]=useState(false);
-  
- 
+
   return (
     <div className={state === false ? "navbar" : "navbar1"}>
       <h1 className="logo">
@@ -24,23 +23,34 @@ const Navbar = () => {
           <Link style={{ textDecoration: "none" }} to={"./products"}>
             <li className={state === false ? "list" : "list1"}>Products</li>
           </Link>
-          <li className={state === false ? "list" : "list1"}>About</li>
-          <li className={state === false ? "list" : "list1"}>Contact</li>
+          <Link style={{ textDecoration: "none" }} to={"./about"}>
+            <li className={state === false ? "list" : "list1"}>About</li>
+          </Link>
+          <Link style={{ textDecoration: "none" }} to={"./Contact"}>
+            <li className={state === false ? "list" : "list1"}>Contact</li>
+          </Link>
         </ul>
       </span>
+
       <span className={state === false ? "buttons" : "buttons1"}>
-        <button className={state === false ? "button1" : "button2"}>
-          <BiLogIn />
-          Login
-        </button>
-        <button className={state === false ? "button1" : "button2"}>
-          <BsPersonFillAdd />
-          Register
-        </button>
-        <button className={state === false ? "button1" : "button2"}>
-          <HiShoppingCart />
-          Cart(0)
-        </button>
+        <Link style={{ textDecoration: "none" }} to={"./login"}>
+          <button className={state === false ? "button1" : "button2"}>
+            <BiLogIn />
+            Login
+          </button>
+        </Link>
+        <Link to={"./register"} style={{textDecoration:"none"}}>
+          <button className={state === false ? "button1" : "button2"}>
+            <BsPersonFillAdd />
+            Register
+          </button>
+        </Link>
+        <Link to={"/cart"} style={{ textDecoration: "none" }}>
+          <button className={state === false ? "button1" : "button2"}>
+            <HiShoppingCart />
+            Cart
+          </button>
+        </Link>
       </span>
       <span className="menubar" onClick={() => setState(!state)}>
         <GiHamburgerMenu />
